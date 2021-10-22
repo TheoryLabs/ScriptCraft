@@ -1,0 +1,158 @@
+{
+  "name": "@theorylabs/script-craft",
+  "version": "0.0.1",
+  "description": "Because wrangling any project using a JSON file f$%*#@* sucks.",
+  "private": false,
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "readmeFilename": "README.md",
+  "author": {
+    "name": "Branden Dane",
+    "email": "Dane@TheoryLabs.dev",
+    "url": "https://TheoryLabs.dev/whoami"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheoryLabs/ScriptCraft.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheoryLabs/ScriptCraft/issues"
+  },
+  "homepage": "https://github.com/TheoryLabs/ScriptCraft",
+  "files": [
+    "lib",
+    "cli",
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.com/"
+  },
+  "_moduleAliases": {
+    "_$_": ".",
+    "$pkg-manifest": "package.json",
+    "$constants" : "lib/defaults.js",
+    "$namespace-order": "lib/ns-order.js",
+    "$xqtor": "lib/xqtor.js",
+    "$xtasks": "lib/xtasks.js",
+    "$xqtree": "lib/xqtree.js",
+    "$logger": "lib/logger.js",
+    "$print-tasks": "lib/print-tasks/index.js",
+    "$xtask-spec": "lib/xtask-spec.js",
+    "$update-env": "lib/util/update-env.js",
+    "$parse-array": "lib/util/parse-array.js",
+    "$console-reporter": "lib/reporters/console.js",
+    "$console-reporter": "lib/reporters/console.js",
+    "$gen-xqid": "lib/gen-xqid.js",
+    "$stringify": "lib/stringify.js",
+    "$xqitem": "lib/xqitem.js",
+    "$xrun-cli": "cli/xrun.js",
+    "$xrun-lib": "lib/xrun.js",
+    "$check-global": "cli/check-global.js",
+    "$parse-cmd-args": "cli/parse-cmd-args.js",
+    "$usage": "cli/usage.js",
+    "$cli-options": "cli/cli-options.js",
+    "$config": "cli/config.js",
+    "$npm-loader": "cli/npm-loader.js",
+    "$search-up-task-file": "cli/search-up-task-file.js"
+  },
+  "bin": {
+    "script-craft": "bin/script-craft.js",
+    "sc": "bin/script-craft.js"
+  },
+  "main": "lib/index.js",
+  "module": "lib/main.js",
+  "scripts": {
+    "postinstall": "link-module-alias",
+    "cli": "node -r esm ./bin/script-craft.js",
+    "cli:ns": "node -r esm ./bin/script-craft.js --ns",
+    "cli:ls": "node -r esm ./bin/script-craft.js --list",
+    "pretest": "echo hello",
+    "test": "mocha --recursive test/spec --diff --full-trace --require esm",
+    "coverage": "nyc --all --reporter=lcov --reporter=text --reporter=text-summary npm test",
+    "format": "prettier --no-semi false --single-quote true --quote-props consistent --no-bracket-spacing false --arrow-parens avoid --write --print-width 100 lib/*.js test/**/*.js",
+    "xfoo2": "echo xfoo2 from npm scripts"
+  },
+  "dependencies": {
+    "better-module-alias": "^1.1.0",
+    "chalk": "^4.1.0",
+    "chalker": "^1.2.0",
+    "esm": "^3.2.25",
+    "insync": "^2.1.1",
+    "jaro-winkler": "^0.2.8",
+    "lodash.foreach": "^4.5.0",
+    "module-alias": "^2.2.2",
+    "nix-clap": "^1.3.12",
+    "optional-require": "^1.0.2",
+    "path-is-inside": "^1.0.2",
+    "read-pkg-up": "^7.0.1",
+    "require-at": "^1.0.6",
+    "string-array": "^1.0.1",
+    "unwrap-npm-cmd": "^1.1.1",
+    "xsh": "^0.4.5"
+  },
+  "devDependencies": {
+    "alias-hq": "^5.1.6",
+    "chai": "^4.0.0",
+    "link-module-alias": "^1.2.0",
+    "mocha": "^7.1.1",
+    "munchy": "^1.0.7",
+    "nyc": "^11.0.2",
+    "prettier": "^1.2.2",
+    "run-verify": "^1.2.5",
+    "strip-ansi": "^6.0.0",
+    "xaa": "^1.6.0",
+    "xstdout": "^0.1.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "cache": true,
+    "all": true,
+    "exclude": [
+      "cli",
+      "bin",
+      "xrun-tasks.js",
+      "test",
+      "coverage"
+    ]
+  },
+  "@theorylabs/script-craft": {
+    "npm": true,
+    "tasks": {
+      "test": "echo pkg test"
+    }
+  },
+  "prettier": {
+    "printWidth": 100
+  },
+  "keywords": [
+    "theorylabs",
+    "script-craft",
+    "runner",
+    "run-script",
+    "scx",
+    "scripts",
+    "build",
+    "tool",
+    "tooling",
+    "npm-scripts",
+    "shell",
+    "bash",
+    "zsh",
+    "javascript",
+    "task",
+    "concurrent",
+    "parallel",
+    "serial",
+    "series",
+    "tasks",
+    "execution",
+    "executor",
+    "system",
+    "run",
+    "cli"
+  ]
+}
